@@ -1,0 +1,36 @@
+{
+  "bot_token": "YOUR_BOT_TOKEN",
+  "user_id": "YOUR_TELEGRAM_USER_ID (this is entirely for access control of your bot)",
+  "configs": [
+  {
+    "group": "Binance",
+    "entries": [
+      {
+        "type": "funding rate",
+        "symbol": "BTCUSDT",
+        "greater_than": 0.0003
+      },
+      {
+        "type": "funding rate",
+        "symbol": "ETHUSDT",
+        "greater_than": 0.0003
+      }
+    ]
+  },
+  {
+    "group": "GMX",
+    "entries": [
+      {
+        "type": "v1",
+        "chain": "AVAX",
+        "greater_than": 1
+      },
+      {
+        "type": "v1",
+        "chain": "ARBITRUM",
+        "greater_than": 1
+      }
+    ]
+  }
+]
+}
