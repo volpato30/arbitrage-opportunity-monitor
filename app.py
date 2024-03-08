@@ -73,7 +73,7 @@ if __name__ == '__main__':
     for json_config_dict in json_dict["configs"]:
         entry_list.extend(entry_list_factory(json_config_dict))
     application = ApplicationBuilder().token(json_dict["bot_token"]).build()
-    user_id = json_dict["user_id"]
+    user_id = int(json_dict["user_id"])
     user_filter = filters.User(user_id=user_id)
     start_handler = CommandHandler("start", start, filters=user_filter, block=False)
     shutdown_handler = CommandHandler("shutdown", shutdown, filters=user_filter)
