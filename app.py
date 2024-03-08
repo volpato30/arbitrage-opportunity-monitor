@@ -44,7 +44,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
                                        text=f"monitor already started")
         return
     RUN_FLAG = True
-    welcome_message = "monitoring:\n" + "\n".join([entry.metric_str() for entry in entry_list])
+    welcome_message = "use /start to start the bot, use /shutdown to shut down. Any other message will trigger a status query\n\n" + "monitoring:\n" + "\n".join([entry.metric_str() for entry in entry_list])
     await context.bot.send_message(chat_id=update.effective_chat.id,
                                    text=welcome_message)
     coroutines = [polling_call(entry, update, context) for entry in entry_list]
